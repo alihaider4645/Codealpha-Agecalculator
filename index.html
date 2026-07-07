@@ -9,6 +9,10 @@
 <body>
 
   <main class="card">
+    <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span id="themeIcon">🌙</span>
+    </button>
+
     <h1>Age Calculator</h1>
     <p class="subtitle">Enter your date of birth to see your exact age.</p>
 
@@ -30,22 +34,61 @@
 
       <p id="error" class="error" role="alert" aria-live="polite"></p>
 
-      <button type="submit">Calculate Age</button>
+      <div class="button-row">
+        <button type="submit" id="calcBtn">Calculate Age</button>
+        <button type="button" id="resetBtn" class="secondary-btn">Reset</button>
+      </div>
     </form>
 
     <div id="result" class="result hidden">
-      <div class="result-item">
-        <span id="years" class="result-number">0</span>
-        <span class="result-label">Years</span>
+
+      <div class="result-grid">
+        <div class="result-item">
+          <span id="years" class="result-number">0</span>
+          <span class="result-label">Years</span>
+        </div>
+        <div class="result-item">
+          <span id="months" class="result-number">0</span>
+          <span class="result-label">Months</span>
+        </div>
+        <div class="result-item">
+          <span id="days" class="result-number">0</span>
+          <span class="result-label">Days</span>
+        </div>
       </div>
-      <div class="result-item">
-        <span id="months" class="result-number">0</span>
-        <span class="result-label">Months</span>
+
+      <div class="divider"></div>
+
+      <div class="facts-grid">
+        <div class="fact">
+          <span class="fact-label">Born on</span>
+          <span id="dayOfWeek" class="fact-value">—</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Zodiac sign</span>
+          <span id="zodiac" class="fact-value">—</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Total days lived</span>
+          <span id="totalDays" class="fact-value">—</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Total weeks lived</span>
+          <span id="totalWeeks" class="fact-value">—</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Total months lived</span>
+          <span id="totalMonths" class="fact-value">—</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Next birthday</span>
+          <span id="nextBirthday" class="fact-value">—</span>
+        </div>
       </div>
-      <div class="result-item">
-        <span id="days" class="result-number">0</span>
-        <span class="result-label">Days</span>
-      </div>
+
+      <button type="button" id="copyBtn" class="copy-btn">
+        <span id="copyIcon">📋</span> Copy Result
+      </button>
     </div>
   </main>
 
